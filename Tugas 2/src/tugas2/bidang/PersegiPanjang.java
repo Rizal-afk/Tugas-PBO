@@ -13,6 +13,7 @@ public class PersegiPanjang implements HitungBidang{
 
     public static double panjang;
     public static double lebar;
+    public static double luas;
 
     public PersegiPanjang(double panjang, double lebar) {
         this.panjang = panjang;
@@ -21,12 +22,14 @@ public class PersegiPanjang implements HitungBidang{
     
     @Override
     public double hitungluas() {
+        luas=panjang*lebar;
         return(panjang*lebar);
     }
     
     //Overloading
     public static double hitungluas(double panjang,double lebar) {
-        return(panjang*lebar);
+        luas=panjang*lebar;
+        return(luas);
     }
 
     @Override

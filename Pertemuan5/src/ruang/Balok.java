@@ -3,27 +3,30 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tugas2.ruang;
+package ruang;
 
-import tugas2.bidang.PersegiPanjang;
+import bidang.Persegi;
+
 
 /**
  *
  * @author Asus
  */
-public class Balok extends PersegiPanjang implements HitungRuang{
+public class Balok extends Persegi implements HitungRuang{
+    double tinggi;
 
-    public Balok(double panjang, double lebar) {
+    public Balok(double tinggi, double panjang, double lebar) {
         super(panjang, lebar);
-    }
-    
-    @Override
-    public double hitungvolume(double tinggi) {
-        return(super.luas*tinggi);
+        this.tinggi = tinggi;
     }
 
     @Override
-    public double hitungluasPermukaan(double tinggi) {
+    public double hitungVolume() {
+       return(panjang*lebar*tinggi);
+    }
+
+    @Override
+    public double hitungLuaspermukaan() {
         return(2*(panjang*lebar+panjang*tinggi+lebar*tinggi));
     }
     
